@@ -48,6 +48,8 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaSalida = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         txtRuta = new javax.swing.JTextField();
         btnprocesar = new javax.swing.JButton();
         btnSeleccionar = new javax.swing.JButton();
@@ -57,6 +59,8 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        jPanel1 = new javax.swing.JPanel();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,38 +69,41 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
         txtAreaSalida.setRows(5);
         jScrollPane1.setViewportView(txtAreaSalida);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 790, 60));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 800, 140));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane3.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 30, 530, 380));
 
         txtRuta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtRutaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 620, 30));
+        getContentPane().add(txtRuta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 420, 30));
 
-        btnprocesar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/if_running_process_45340.png"))); // NOI18N
         btnprocesar.setText("Procesar");
         btnprocesar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnprocesarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnprocesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 190, -1));
+        getContentPane().add(btnprocesar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 110, 30));
 
-        btnSeleccionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/if_folder_upload_66809.png"))); // NOI18N
         btnSeleccionar.setText("Seleccionar ");
         btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSeleccionarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, -1, -1));
+        getContentPane().add(btnSeleccionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 100, 30));
 
         lblTitulo.setBackground(new java.awt.Color(240, 240, 242));
         lblTitulo.setFont(new java.awt.Font("Ubuntu", 3, 24)); // NOI18N
-        lblTitulo.setForeground(javax.swing.UIManager.getDefaults().getColor("Button.background"));
-        lblTitulo.setText("Procesamiento de Cadenas Formato Fasta");
-        getContentPane().add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        lblTitulo.setText("Procesamiento de Cadenas");
+        getContentPane().add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
         txtScore.setEditable(false);
         txtScore.addActionListener(new java.awt.event.ActionListener() {
@@ -104,27 +111,31 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
                 txtScoreActionPerformed(evt);
             }
         });
-        getContentPane().add(txtScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 90, 30));
+        getContentPane().add(txtScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 90, 30));
 
-        jLabel1.setForeground(new java.awt.Color(254, 247, 247));
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Score");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 60, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 60, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fasta2.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 280));
+        jLabel2.setText("Adjunte un archivo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, 30));
 
         jScrollPane2.setPreferredSize(new java.awt.Dimension(988, 922));
         jScrollPane2.setVerifyInputWhenFocusTarget(false);
 
         jTextPane1.setBackground(new java.awt.Color(254, 242, 242));
         jTextPane1.setToolTipText("");
-        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextPane1.setMinimumSize(new java.awt.Dimension(66, 20));
         jTextPane1.setPreferredSize(new java.awt.Dimension(866, 820));
         jScrollPane2.setViewportView(jTextPane1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 790, 100));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 800, 120));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1390, 430));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,6 +165,8 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
             setTextAreaSecuencia1(bioInformatica.alineacion.getSecuencia1());
             txtAreaSalida.append("\n");
             setTextAreaSecuencia2(bioInformatica.alineacion.getSecuencia2());
+            
+             
 
             DefaultStyledDocument doc = new DefaultStyledDocument(sc);
             color = cambioColor("Blanco");
@@ -210,6 +223,8 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
             }
 
             jTextPane1 = new JTextPane(doc);
+            
+            jTextArea2.append(bioInformatica.getSalida());
 
         } catch (BadLocationException | FileNotFoundException ex) {
             Logger.getLogger(PantallaAlgortimo.class.getName()).log(Level.SEVERE, null, ex);
@@ -318,8 +333,12 @@ public class PantallaAlgortimo extends javax.swing.JFrame {
     private javax.swing.JButton btnprocesar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextArea txtAreaSalida;

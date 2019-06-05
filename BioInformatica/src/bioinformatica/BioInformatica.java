@@ -17,19 +17,27 @@ public class BioInformatica {
     public String cadenas[] = null;
     public Lectura lectura = new Lectura();
     public Alineacion alineacion = new Alineacion();
+    private String salida;
 
-    public BioInformatica(String rutaArchivo) throws FileNotFoundException {
-        procesarArchivo(rutaArchivo);
+    public String getSalida() {
+        return salida;
     }
 
-    private void procesarArchivo(String archivo) throws FileNotFoundException {
+    public BioInformatica(String rutaArchivo) throws FileNotFoundException {
+        this.salida = procesarArchivo(rutaArchivo);
+    }
+
+    private String procesarArchivo(String archivo) throws FileNotFoundException {
         try {
             cadenas = lectura.lectura(archivo);
         } catch (StringIndexOutOfBoundsException e) {
             System.out.print(e);
         }
+        
         if (!cadenas[0].isEmpty() && !cadenas[1].isEmpty()) {
-            alineacion.alineacion(cadenas[0], cadenas[1]);
+          return alineacion.alineacion(cadenas[0], cadenas[1]);
         }
+        
+        return null;
     }
 }

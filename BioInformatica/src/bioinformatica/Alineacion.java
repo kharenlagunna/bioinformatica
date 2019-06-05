@@ -30,7 +30,7 @@ public class Alineacion {
         scrore.add("T");
     }
     
-    public void alineacion(String secuencia1, String secuencia2) {
+    public String alineacion(String secuencia1, String secuencia2) {
         int filas = secuencia1.length() + 2; // se suma una posicion para ajustarla en la matriz
         int columnas = secuencia2.length() + 2;
         int contador = 0, contador1 = 0;
@@ -59,7 +59,7 @@ public class Alineacion {
         
         String matriz[][] = movimientos(matrizPrincipal, filas, columnas);
         construirCamino(matriz, columnas, filas); // Retroceso
-        mostrar(matriz, columnas, filas);
+        return mostrar(matriz, columnas, filas);
         
     }
     
@@ -150,15 +150,20 @@ public class Alineacion {
         System.out.println(secuencia1.toString());
         System.out.println(secuencia2.toString());
         System.out.println("Score Total " + scroreTotal);
+        
     }
     
-    public void mostrar(String[][] matriz, int columnas, int filas) {
+    public String mostrar(String[][] matriz, int columnas, int filas) {
+        String salida = "";
         for (int i = 0; i < columnas; i++) {
             System.out.print("\n");
             for (int j = 0; j < filas; j++) {
-                System.out.print(matriz[j][i] + "\t");
+                salida += matriz[j][i] + "\t";
+                System.out.print(matriz[j][i] + "\t");   
             }
+            salida += "\n";
         }
+        return salida;
     }
     
     public Integer numeroMayor(Integer izq, Integer arriba, Integer diag) {
